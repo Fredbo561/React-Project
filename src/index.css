@@ -1,68 +1,197 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-size: cover;
+  background: linear-gradient(to bottom, #ffb85c, #ffd9a0, #76d7c4, #2e86c1);
+  color: #375e97;
+  font-size: 2rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;  /* Ensure it behaves properly if you have content inside */
+  width: 100% !important;
+
 }
 
+.aboutmepic {
+  background-color: #f0f0f0; /* Light grey background, you can change this */
+  background-image: url('/src/assets/IMG_2554.jpg'); /* Optional background image */
+  background-size: cover; /* To cover the whole area */
+  background-position: center; /* Center the image */
+  height: 250px; /* Ensure it takes up full viewport height */
+  width: 250px;;
+}
+
+h5 {
+  color: #375e97;
+  font-family: 'Alex Brush', cursive;
+  font-size: 5rem;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+a.nav-link {
+  margin-left: 45%;
+  color: white;  
+  font-family: 'Alex Brush', cursive;
+  font-size: 2rem;
+  
+}
+
+li.nav-item {
+  white-space: nowrap;
+  
+  
+}
+
+button.navbar-toggler-icon {
+  fill: currentColor !important;
+  color: white !important;
+  
+}
+
+nav {
+  padding-bottom: 5rem !important;
+  
+}
+
+
+
+/* Shrink font size for medium screens */
+@media (max-width: 1024px) {
+  li.nav-item  {
+    font-size: 1.25rem; /* Slightly smaller font size for tablets or medium screens */
+  }
+}
+
+/* Shrink font size further for small screens (e.g., phones) */
+@media (max-width: 1175px) {
+  li.nav-item   {
+    font-size: 1rem; /* Smaller font size for mobile devices */
+  }
+}
+
+/* Even smaller font size for very small screens (e.g., smaller phones) */
+@media (max-width: 576px) {
+  li.nav-item  {
+    font-size: 0.875rem; /* Extra small font size for small screens */
+  }
+}
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: 'Alex Brush', cursive;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+  padding-right: 3rem;
+  /* font-size: 5rem !important; */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.footer {
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;  /* Transparent background */
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  z-index: 1000;  /* Make sure the footer is above other content */
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-btn-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+
+  transition: background-color 0.3s ease;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+
+.footer-btn-link svg {
+  width: 100px;
+  height: 100px;
+  fill: white;  /* Ensures the SVG icon is white */
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.card {
+  height: 450px !important;
+  width: 450px !important;
+ 
+}
+.card-content {
+  /* position: relative; */
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.github-link {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  /* color: transparent !important; */
+}
+
+.github-logo {
+  width: 80px;
+  height: 80px;
+  /* color: transparent !important; */
+}
+
+.card:hover .github-link {
+  opacity: 1;
+}
+
+.card:hover .card-content ul li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-content ul li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.card1 {
+  background-image: url('./assets/gamer.jpg');
+  background-size: cover; /* To cover the whole area */
+  background-position: center;
+}
+.card2 {
+  background-image: url('./assets/LakeTahoe.JPG');
+  background-size: cover; /* To cover the whole area */
+  background-position: center;
+}
+.card3 {
+  background-image: url('./assets/mustang.avif');
+  background-size: cover; /* To cover the whole area */
+  background-position: center;
+}
+.card4 {
+  background-image: url('./assets/packers.jpg');
+  background-size: cover; /* To cover the whole area */
+  background-position: center;
 }
